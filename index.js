@@ -93,6 +93,10 @@ const tweet_sentence = (city, rainfall, weather) => {
     const result = weather.weather.pop();
     let   emoji  = weather_table[result.id];
 
+    if(emoji === '☂' && rainfall.railfall <= 0.0){
+        emoji = '☁️';
+    }
+
     if(typeof emoji === 'undefined'){
         emoji = '？';
     }
