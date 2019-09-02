@@ -1,0 +1,26 @@
+{
+  "name": "@sevenspice/weather-tweet",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "description": "api server dedicated to markdown",
+  "engines": {
+    "node": ">=8.11.4"
+  },
+  "dependencies": {
+    "@sevenspice/warbler": "https://github.com/sevenspice/Warbler.git",
+    "js-yaml": "^3.13.1",
+    "moment": "^2.24.0",
+    "request": "^2.88.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.2.2",
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^6.0.0",
+    "jsdoc": "^3.6.3",
+    "minimist": "^1.2.0",
+    "uuid": "^3.3.2"
+  }
+}
