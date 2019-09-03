@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "description": "api server dedicated to markdown",
+  "description": "weather information tweet script.",
   "engines": {
     "node": ">=8.11.4"
   },
