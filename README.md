@@ -1,6 +1,11 @@
 # 概要
 
-[Google Cloud Functions](https://cloud.google.com/functions/docs/concepts/overview?hl=ja) を使用した気象情報ツイートツール。
+[Google Cloud Functions](https://cloud.google.com/functions/docs/concepts/overview?hl=ja) を使用した気象情報ツイートスクリプト。
+
+## 動作例
+
+* [島根県気象情報BOT](https://twitter.com/shimane_weather)
+    * 1 時間ごとに Functions をキックして島根県内の気象情報をツイートし続ける。
 
 # 必要条件
 
