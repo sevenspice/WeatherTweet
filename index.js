@@ -93,12 +93,29 @@ const tweet_sentence = (city, rainfall, weather) => {
     const result = weather.weather.pop();
     let   emoji  = weather_table[result.id];
 
+    if(typeof emoji === 'undefined'){
+        emoji = '？';
+    }
+
+    // mark as rain when rainfall is observed.
+    if(rainfall.railfall > 0.0){
+        emoji = '☂';
+    }
+
     if(emoji === '☂' && rainfall.railfall <= 0.0){
         emoji = '☁️';
     }
 
-    if(typeof emoji === 'undefined'){
-        emoji = '？';
+    if(emoji === '⛈' && rainfall.railfall <= 0.0){
+        emoji = '☁️';
+    }
+
+    if(emoji === '🌧' && rainfall.railfall <= 0.0){
+        emoji = '☁️';
+    }
+
+    if(emoji === '🌦' && rainfall.railfall <= 0.0){
+        emoji = '🌤';
     }
 
     let sentence = `${ city } => ${ emoji } `;
@@ -131,7 +148,7 @@ const extractionYahooRainfall = (content) => {
     const type     = list[0].elements.shift().elements.pop().text;
     const railfall = list[0].elements.pop().elements.pop().text;
 
-    return { type: type, railfall: railfall };
+    return { type: type, railfall: Number.parseFloat(railfall) };
 };
 
 /**
