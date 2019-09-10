@@ -118,7 +118,7 @@ const tweet_sentence = (city, rainfall, weather) => {
         emoji = '🌤';
     }
 
-    let sentence = `${ city } => ${ emoji } `;
+    let sentence = `#${ city } ${ emoji } `;
     sentence += `🌡 ${ Math.floor(weather.main.temp - KELVIN) }° `;
     sentence += `💧 ${ weather.main.humidity }% `;
     if(rainfall.railfall > 0.0){
