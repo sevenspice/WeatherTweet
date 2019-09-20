@@ -49,12 +49,6 @@ vi .env.yaml
 ※ サービスのトークン個所は取得したものを記述して保存する。  
 ※ 天気情報を取得する地点を変更する場合は `CITIES` の個所を修正すること。
 
-一時的に `.gitignore` から .env.yaml を消す
-```
-vi .gitignore
-```
-※ １行目をコメントアウトする。
-
 Google Cloud Platform へデプロイする。
 ```
 gcloud beta functions deploy weatherTweet --set-env-vars TZ=Asia/Tokyo --runtime nodejs10 --trigger-http
