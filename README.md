@@ -1,11 +1,11 @@
 # 概要
 
-[Google Cloud Functions](https://cloud.google.com/functions/docs/concepts/overview?hl=ja) を使用した気象情報ツイートスクリプト。
+[Google Cloud Functions](https://cloud.google.com/functions/docs/concepts/overview?hl=ja)を使用した気象情報ツイートスクリプト。
 
 ## 動作例
 
 * [島根県気象情報BOT](https://twitter.com/shimane_weather)
-    * 1 時間ごとに Functions をキックして島根県内の気象情報をツイートし続ける。
+    * 1 時間ごとにFunctionsをキックして島根県内の気象情報をツイートし続ける。
 
 # 必要条件
 
@@ -15,9 +15,9 @@
 | npm              | `>=5.6.0`                |
 | gcloud ※        | `>=256.0.0`              |
 
-* [Google Cloud Platform](https://cloud.google.com/docs/overview/?hl=ja) でのプロジェクト作成まで完了していること。
+* [Google Cloud Platform](https://cloud.google.com/docs/overview/?hl=ja)でのプロジェクト作成まで完了していること。
 
-※ gcloud ( Google Cloud SDK ) のインストール方法は[ここ](https://cloud.google.com/sdk/docs/?hl=ja#linux)。
+※ gcloud (Google Cloud SDK)のインストール方法は[ここ](https://cloud.google.com/sdk/docs/?hl=ja#linux)。
 
 ## 連携サービス
 
@@ -47,9 +47,9 @@ cp .env.yaml.origin .env.yaml
 vi .env.yaml
 ```
 ※ サービスのトークン個所は取得したものを記述して保存する。  
-※ 天気情報を取得する地点を変更する場合は `CITIES` の個所を修正すること。
+※ 天気情報を取得する地点を変更する場合は`CITIES`の個所を修正すること。
 
-Google Cloud Platform へデプロイする。
+Google Cloud Platformへデプロイする。
 ```
 gcloud beta functions deploy weatherTweet --set-env-vars TZ=Asia/Tokyo --runtime nodejs10 --trigger-http
 ```
@@ -115,7 +115,7 @@ cp .env.yaml.origin .env.yaml
 vi .env.yaml
 ```
 ※ サービスのトークン個所は取得したものを記述して保存する。  
-※ 天気情報を取得する地点を変更する場合は `CITIES` の個所を修正すること。
+※ 天気情報を取得する地点を変更する場合は`CITIES`の個所を修正すること。
 
 デプロイを実行する。
 ```
