@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "description": "weather information tweet script.",
+  "description": "Weather information tweet script.",
   "engines": {
     "node": ">=8.11.4"
   },
