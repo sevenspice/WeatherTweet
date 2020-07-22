@@ -89,7 +89,7 @@ const loadEnv = () => {
  * @param {object} weather  weather informations.
  * @return {string} tweet text sentence.
  */
-const tweet_sentence = (city, rainfall, weather) => {
+const tweetSentence = (city, rainfall, weather) => {
     const result = weather.weather.pop();
     let   emoji  = weather_table[result.id];
 
@@ -241,7 +241,7 @@ exports.weatherTweet = async (request, response) => {
             const weather_results = await callOpenWeatherMapApi(OPENWEATHERMAP_API_ENDPOINT, OPENWEATHERMAP_API_KEY, cities[keys[i]].LONG, cities[keys[i]].LAT);
             const railfall = extractionYahooRainfall(yahoo_results);
             const weather  = JSON.parse(weather_results);
-            tweet += tweet_sentence(cities[keys[i]].NAME, railfall, weather);
+            tweet += tweetSentence(cities[keys[i]].NAME, railfall, weather);
         }
 
         const timeout   = 10000;
