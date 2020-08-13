@@ -43,7 +43,7 @@ cd weather-tweet
 
 設定ファイルを記述する。
 ```
-cp .env.yaml.origin .env.yaml
+cp .env.origin.yaml .env.yaml
 vi .env.yaml
 ```
 ※ サービスのトークン個所は取得したものを記述して保存する。  
