@@ -13,11 +13,9 @@
 | :--------------- | :----------------------- |
 | node.js          | `>=8.11.4`               |
 | npm              | `>=5.6.0`                |
-| gcloud ※        | `>=256.0.0`              |
+| gcloud          | `>=256.0.0`              |
 
 * [Google Cloud Platform](https://cloud.google.com/docs/overview/?hl=ja)でのプロジェクト作成まで完了していること。
-
-※ gcloud (Google Cloud SDK)のインストール方法は[ここ](https://cloud.google.com/sdk/docs/?hl=ja#linux)。
 
 ## 連携サービス
 
@@ -46,8 +44,7 @@ cd weather-tweet
 cp .env.origin.yaml .env.yaml
 vi .env.yaml
 ```
-※ サービスのトークン個所は取得したものを記述して保存する。  
-※ 天気情報を取得する地点を変更する場合は`CITIES`の個所を修正すること。
+* 設定については[設定ファイル](#設定ファイル)を参照すること。
 
 Google Cloud Platformへデプロイする。
 ```
@@ -114,8 +111,7 @@ cd weather-tweet
 cp .env.yaml.origin .env.yaml
 vi .env.yaml
 ```
-※ サービスのトークン個所は取得したものを記述して保存する。  
-※ 天気情報を取得する地点を変更する場合は`CITIES`の個所を修正すること。
+* 設定については[設定ファイル](#設定ファイル)を参照すること。
 
 デプロイを実行する。
 ```
@@ -139,3 +135,40 @@ functions call weatherTweet
 functions logs read
 ```
 
+# 設定ファイル
+
+``` yaml
+# Twitter APIのトークン情報を設定する
+TWITTER:
+  API_SCHEME: 'https'
+  API_HOST: 'api.twitter.com'
+  API_ENDPOINT: '/1.1/statuses/update.json'
+  API_PROTOCOL: 'POST'
+  API_CONSUMER_KEY: ''
+  API_CONSUMER_SECRET: ''
+  API_ACCESS_TOKEN: ''
+  API_ACCESS_TOKEN_SECRET: ''
+# Yahoo APIのトークン情報を設定する
+YAHOO:
+  API_ENDPOINT: 'https://map.yahooapis.jp/weather/V1/place'
+  API_APPLICATION_ID: ''
+  API_APPLICATION_SECRET: ''
+# Open wather mapのトークン情報を設定する
+OPENWEATHERMAP:
+  API_ENDPOINT: 'https://api.openweathermap.org/data/2.5/weather'
+  API_KEY: ''
+# 気象情報を取得したい地域の名称と位置情報を設定する
+CITIES:
+  MATSUE:
+    NAME: '松江'
+    LONG: 133.0488
+    LAT: 35.4681
+  IZUMO:
+    NAME: '出雲'
+    LONG: 132.7549
+    LAT: 35.3669
+  HAMADA:
+    NAME: '浜田'
+    LONG: 132.0799
+    LAT: 34.8991
+```
